@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { width: 100%; }
+
+:root {
+  --mobileView: hidden;
+  --tabletView: hidden;
+  --desktopView: visible;
+  --medLgView: visible;
+
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+  :root {
+    --mobileView: hidden;
+    --tabletView: visible;
+    --desktopView: hidden;
+    --medLgView: visible;
+  }
+ }
+
+ @media (max-width: 476px) {
+   :root {
+     --mobileView: visible;
+     --tableView: hidden;
+     --desktopView: hidden;
+     --medLgView: hidden;
+   }
+ }

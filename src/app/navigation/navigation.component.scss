@@ -1,0 +1,101 @@
+header {
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: [logoStart] minmax(60px, 160px) [logoEnd spacerStart] minmax(8px, auto) [spacerEnd linksStart] auto [linksEnd avatarStart] 64px [avatarEnd];
+  column-gap: minmax(8px, 24px);
+  align-content: center;
+  justify-content: stretch;
+}
+
+.logo {
+  grid-column: 1 / 1;
+  margin: 0 0 0 8px;
+  width: 150px;
+  justify-self: start;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 12px;
+  justify-content: space-evenly;
+}
+
+.groups {
+  grid-column: 1 / 1;
+  text-align: center;
+  padding: 24px 0 0 0;
+}
+
+.register {
+  grid-column: 2 / 2;
+  text-align: center;
+  padding: 24px 0 0 0;
+}
+
+.contact {
+  grid-column: 3 / 3;
+  text-align: center;
+  padding: 24px 0 0 0;
+}
+
+.menu-icon {
+  display: none;
+  // visibility: hidden;
+  // grid-column: 0 / 0 ;
+}
+
+.avatar {
+  grid-column: 4 / 4;
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  padding: 8px;
+  justify-self: end;
+  grid-row: minmax(0, 1);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white;
+  background-color: black;
+}
+
+@media (max-width: 476px) {
+  nav {
+    grid-template-columns: repeat(2, auto);
+    column-gap: minmax(8px, 24px);
+  }
+
+  .logo {
+    width: auto;
+  }
+
+  .groups,
+  .register,
+  .contact {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+    visibility: visible;
+    grid-column: 1 / 1;
+    justify-self: center;
+    padding: 24px 0 0 0;
+  }
+
+  .avatar {
+    grid-column: 2 / 2;
+    width: 54px;
+    height: 54px;
+    border-radius: 100%;
+    padding: 8px;
+    justify-self: end;
+  }
+
+}

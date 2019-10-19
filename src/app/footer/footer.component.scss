@@ -1,0 +1,66 @@
+.footer-container {
+  display: grid;
+  grid-template-columns: [ footerStart ] 1fr [ footerEnd copyrightStart ] 1fr [copyrightEnd iconsStart ] 2fr [ iconsEnd ];
+  column-gap: 8px;
+  margin: 16px 0 0 24px;
+}
+
+.footer-logo {
+  grid-column: footerStart / footerEnd;
+  align-self: center;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.copyright {
+  grid-column: copyrightStart / copyrightEnd;
+  align-self: center;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.footer-icons {
+  grid-column: iconsStart / iconsEnd;
+  align-self: auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 8px;
+}
+
+.footer-icon {
+  align-self: center;
+  grid-column: auto;
+}
+
+@media screen and (max-width: 467px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "footer copyright"
+      "icons icons";
+    gap: 16px 16px;
+    margin-top: 16px;
+  }
+
+  .footer-logo {
+    grid-area: footer;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .copyright {
+    grid-area: copyright;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .footer-icons {
+    grid-area: icons;
+    margin: 0 0 16px 24px;
+    row-gap: 16px;
+  }
+
+}

@@ -1,0 +1,11 @@
+
+<div class="adjust-content">
+  <ng-template ngFor let-item [ngForOf]="content">
+    <div class="{{item.class }}">
+      <h3>{{ item.title }}</h3>
+        <div *ngFor="let para of item.paragraphs">
+          <p class="adjust-p">{{ para }}</p>
+        </div>
+    </div>
+  </ng-template>
+</div>

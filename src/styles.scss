@@ -1,27 +1,49 @@
-html, body { width: 100%; }
-
-:root {
-  --mobileView: hidden;
-  --tabletView: hidden;
-  --desktopView: visible;
-  --medLgView: visible;
-
+html, body {
+  margin: 0;
+  background-color: black;
 }
 
-@media (min-width: 700px) and (max-width: 1024px) {
-  :root {
-    --mobileView: hidden;
-    --tabletView: visible;
-    --desktopView: hidden;
-    --medLgView: visible;
-  }
- }
+h3 {
+  font-weight: 700;
+  margin: 16px 24px 8px 24px;
+}
 
- @media (max-width: 476px) {
-   :root {
-     --mobileView: visible;
-     --tableView: hidden;
-     --desktopView: hidden;
-     --medLgView: hidden;
-   }
- }
+.app-container {
+  display: grid;
+  grid-template-rows: [startNav] 50px [endNav startWide] minmax(auto, 600px) [endWide startAdjust] auto [endAdjust startFooter] minmax(50px, 80px) [endFooter];
+  grid-row-gap: 24px;
+  justify-content: start;
+  align-content: start;
+  margin: 16px 24px 16px 16px;
+  width: calc(100% - 32px);
+}
+
+.nav {
+  grid-rows: startNav / endNav;
+  background-color: lightgray;
+}
+
+.wide {
+  margin-top: 24px;
+  grid-rows: startWide / endWide;
+  background-color: lightcoral;
+}
+
+.adjustable {
+  grid-rows: startAdjust / endAdjust;
+  background-color: lightgray
+}
+
+.footer {
+  grid-rows: startFooter / endFooter;
+  background-color: lightcoral;
+}
+
+@media screen and (max-width: 467px) {
+  .app-container {
+    grid-template-rows: [startNav] 50px [endNav startWide] auto [endWide startAdjust] auto [endAdjust startFooter] auto [endFooter];
+    grid-row-gap: 24px;
+    margin: 16px 24px 16px 16px;
+    width: calc(100% - 32px);
+  }
+}

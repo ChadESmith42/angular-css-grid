@@ -1,17 +1,19 @@
 header {
   background-color: lightgray;
   display: grid;
-  grid-template-columns: [logoStart] minmax(60px, 160px) [logoEnd spacerStart] minmax(8px, auto) [spacerEnd linksStart] auto [linksEnd avatarStart] 64px [avatarEnd];
+  grid-template-columns: [logoStart] minmax(60px, auto) [logoEnd spacerStart] minmax(8px, auto) [spacerEnd linksStart] auto [linksEnd avatarStart] 64px [avatarEnd];
   column-gap: minmax(8px, 24px);
   align-content: center;
   justify-content: stretch;
+  height: 72px;
+  box-sizing: border-box;
 }
 
 .logo {
   grid-column: 1 / 1;
-  margin: 0 0 0 8px;
-  width: 150px;
+  margin-left: 24px;
   justify-self: start;
+  align-self: center;
 }
 
 nav {
@@ -23,20 +25,17 @@ nav {
 
 .groups {
   grid-column: 1 / 1;
-  text-align: center;
-  padding: 24px 0 0 0;
+  align-self: center;
 }
 
 .register {
   grid-column: 2 / 2;
-  text-align: center;
-  padding: 24px 0 0 0;
+  align-self: center;
 }
 
 .contact {
   grid-column: 3 / 3;
-  text-align: center;
-  padding: 24px 0 0 0;
+  align-self: center;
 }
 
 .menu-icon {
@@ -50,9 +49,8 @@ nav {
   width: 54px;
   height: 54px;
   border-radius: 100%;
-  padding: 8px;
-  justify-self: end;
-  grid-row: minmax(0, 1);
+  margin-top: 8px;
+  align-self: center;
 }
 
 a {

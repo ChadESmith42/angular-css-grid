@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+:root {
+  --navy: #1e3d58;
+  --royal: #057dcd;
+  --grotto: #43b0f1;
+  --white: #e8eef1;
+}
+
+
+
 html, body {
   margin: 0;
-  background-color: black;
+  background-color: var(--navy);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -12,41 +21,53 @@ h3 {
 }
 
 .app-container {
+  margin: 16px 24px 16px 16px;
   display: grid;
-  grid-template-rows: [startNav] 50px [endNav startWide] minmax(auto, 600px) [endWide startAdjust] auto [endAdjust startFooter] minmax(50px, 80px) [endFooter];
-  grid-row-gap: 24px;
+  grid-template-rows: [startNav] auto [endNav startWide] minmax(auto, 600px) [endWide startAdjust] auto [endAdjust startFooter] auto [endFooter];
+  row-gap: 24px;
   justify-content: start;
   align-content: start;
-  margin: 16px 24px 16px 16px;
   width: calc(100% - 32px);
 }
 
 .nav {
   grid-rows: startNav / endNav;
-  background-color: lightgray;
+  background-color: var(--grotto);
+  color: var(--white);
+  border-radius: 8px;
 }
 
 .wide {
-  margin-top: 24px;
   grid-rows: startWide / endWide;
-  background-color: lightcoral;
+  background-color: var(--royal);
+  border-radius: 8px;
 }
 
 .adjustable {
   grid-rows: startAdjust / endAdjust;
-  background-color: lightgray
+  background-color: var(--grotto);
+  border-radius: 8px;
 }
 
 .footer {
   grid-rows: startFooter / endFooter;
-  background-color: lightcoral;
+  background-color: var(--royal);
+  border-radius: 8px;
+  padding: 8px;
 }
 
-@media screen and (max-width: 467px) {
+@media screen and (min-width: 500px) and (max-width: 900px) {
   .app-container {
-    grid-template-rows: [startNav] 50px [endNav startWide] auto [endWide startAdjust] auto [endAdjust startFooter] auto [endFooter];
-    grid-row-gap: 24px;
-    margin: 16px 24px 16px 16px;
+    row-gap: 16px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .app-container {
+    grid-template-rows: [startNav] auto [endNav startWide] auto [endWide startAdjust] auto [endAdjust startFooter] auto [endFooter];
+    row-gap: 24px;
     width: calc(100% - 32px);
   }
 }
+
+

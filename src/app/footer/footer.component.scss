@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: [ footerStart ] 1fr [ footerEnd copyrightStart ] 1fr [copyrightEnd iconsStart ] 2fr [ iconsEnd ];
   column-gap: 8px;
-  margin: 16px 0 0 24px;
+  margin: 8px 0 0 16px;
 }
 
 .footer-logo {

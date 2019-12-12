@@ -1,11 +1,12 @@
 header {
-  background-color: lightgray;
+  background-color: var(--grotto);
+  margin: 2px;
+  border-radius: 8px;
   display: grid;
   grid-template-columns: [logoStart] minmax(60px, auto) [logoEnd spacerStart] minmax(8px, auto) [spacerEnd linksStart] auto [linksEnd avatarStart] 64px [avatarEnd];
   column-gap: minmax(8px, 24px);
   align-content: center;
   justify-content: stretch;
-  height: 72px;
   box-sizing: border-box;
 }
 
@@ -46,24 +47,28 @@ nav {
 
 .avatar {
   grid-column: 4 / 4;
-  width: 54px;
-  height: 54px;
+  max-width: 54px;
+  max-height: 54px;
+  box-sizing: content-box;
   border-radius: 100%;
-  margin-top: 8px;
+  margin-top: 16px;
   align-self: center;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--navy);
+  padding: 12px 16px;
+  border-radius: 8px;
 }
 
 a:hover {
-  color: white;
-  background-color: black;
+  color: var(--white);
+  font-size: 700;
+  background-color: var(--navy);
 }
 
-@media (max-width: 467px) {
+@media (max-width: 499px) {
   nav {
     grid-template-columns: repeat(2, auto);
     column-gap: minmax(8px, 24px);
@@ -84,13 +89,15 @@ a:hover {
     visibility: visible;
     grid-column: 1 / 1;
     justify-self: center;
-    padding: 24px 0 0 0;
+    align-self: center;
+    margin: 0 auto;
+    box-sizing: content-box;
   }
 
   .avatar {
     grid-column: 2 / 2;
-    width: 54px;
-    height: 54px;
+    max-width: 54px;
+    max-height: 54px;
     border-radius: 100%;
     padding: 8px;
     justify-self: end;
